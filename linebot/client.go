@@ -64,6 +64,11 @@ func WithEndpointBase(endpointBase string) ClientOption {
 	}
 }
 
+// SetHttpClient function
+func (c *Client) SetHTTPClient(clinet *http.Client) {
+	c.httpClient = clinet
+}
+
 func (client *Client) sendSingleMessage(to []string, content SingleMessageContent) (result *ResponseContent, err error) {
 	message := SingleMessage{
 		To:        to,
